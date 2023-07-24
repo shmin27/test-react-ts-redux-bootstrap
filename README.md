@@ -1,35 +1,73 @@
-# Getting Started with Create React App
+# Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+- QC 실사 검증 프로그램
+- Typescript를 이용한 React.js 프론트엔드 개발환경 셋업
+- 디렉터리 구조:
 
-## Available Scripts
+```
+├── build // 빌드 파일
+├── node_modules
+├── public
+├── src
+│   ├── app // Redux 관련
+│   │   ├── hooks.ts
+│   │   └── store.ts
+│   ├── assets // 정적 자원
+│   │   ├── styles
+│   │   └── svgs
+│   ├── feature
+│   │   ├── navigation
+│   │   └── counter // Redux 예제
+│   ├── pages
+│   │   ├── test-csr
+│   │   └── test-lifecycle
+│   ├── App.tsx
+│   └── index.tsx
+├── .gitignore // git commit 금지 목록
+├── package-lock.json // 설치된 모듈 정보
+├── package.json // 프로젝트 설정
+├── README.md
+└── tsconfig.json // typescript 설정
+```
 
-In the project directory, you can run:
+# Available Scripts
 
-### `npm start`
+### Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Running
 
-### `npm test`
+```
+npm run dev // develop mode
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [http://localhost:3000](http://localhost:3000)
 
-### `npm run build`
+### Build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- information: [deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Test
 
-### `npm run eject`
+```
+npm test
+```
+
+- use Jest
+- information: [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
+
+### eject
+
+```
+npm run eject
+```
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -39,8 +77,100 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# Environment Setting
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### NVM (for Windows):
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- https://github.com/coreybutler/nvm-windows
+
+### Node.js:
+
+```
+nvm install (version) // 최신 버전 or lts 버전 or 특정 버전
+nvm ls // 설치된 node.js 목록 확인
+nvm use (version) // 특정 버전의 node.js 사용하기
+nvm current // 현재 사용중인 node.js 버전 확인
+```
+
+### Typescript:
+
+```
+npm install -g typescript
+```
+
+### VSCode:
+
+- https://code.visualstudio.com/
+
+### ESLint Extension
+
+- file > preferences > setting > editor code > code actions on save > edit in setting json
+
+```
+"editor.codeActionsOnSave" {
+  "source.fixAll.eslint": true
+}
+```
+
+### Prettier Extension
+
+- file > preferences > setting > fomatter > Default Fommatter를 Prettier로, Format On Save 활성
+
+# Project Setting
+
+### CRA boilerplate
+
+```
+npx create-react-app qc-project-web --template redux-typescript
+```
+
+- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+- [React documentation](https://reactjs.org/)
+
+### React-Router
+
+```
+npm install react-router react-router-dom
+npm install -D @types/react-router @types/react-router-dom
+```
+
+### React-Bootstrap
+
+```
+npm install react-bootstrap bootstrap
+npm install -S react-router-bootstrap
+npm install -D @types/react-router-bootstrap
+```
+
+- [React-Bootstrap](https://react-bootstrap.netlify.app/)
+- [React-Router-Bootstrap](https://github.com/react-bootstrap/react-router-bootstrap)
+- [Bootstrap](https://getbootstrap.kr/)
+
+### .gitignore
+
+```
+/* gitignore */
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+```
